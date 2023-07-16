@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>你说得对，但是</title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-size: 20px;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        .c1 {
+            display: inline-block;
+            height: 10px;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100%;
+            resize: none;
+            border: 1px solid #ccc;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #div1 {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    你说得对，但是
+    <div class="c1"><textarea id="t0"></textarea></div>是由
+    <div class="c1"><textarea id="t1"></textarea></div>自主研发的一款
+    <div class="c1"><textarea id="t2"></textarea></div>游戏。游戏发生在一个被称作「
+    <div class="c1"><textarea id="t3"></textarea></div>」的幻想世界，在这里，被
+    <div class="c1"><textarea id="t4"></textarea></div>选中的人将被授予「
+    <div class="c1"><textarea id="t5"></textarea></div>」，导引
+    <div class="c1"><textarea id="t6"></textarea></div>。你将扮演一位名为「
+    <div class="c1"><textarea id="t7"></textarea></div>」的神秘角色，在自由的旅行中邂逅
+    <div class="c1"><textarea id="t8"></textarea></div>的
+    <div class="c1"><textarea id="t9"></textarea></div>，和他们一起击败
+    <div class="c1"><textarea id="t10"></textarea></div>，找回失散的
+    <div class="c1"><textarea id="t11"></textarea></div><br><br>
+    <button onclick="btn1()">生成</button>
+    <button onclick="copyText()">复制</button><br><br>
+    <div id="div1"></div>
+    
+    <script>
+        var s = [
+            "《原神》",
+            "米哈游",
+            "全新开放世界冒险",
+            "提瓦特",
+            "神",
+            "神之眼",
+            "元素之力",
+            "旅行者",
+            "性格各异能力独特",
+            "同伴们",
+            "强敌",
+            "亲人"
+        ];
+
+        show();
+
+        function show() {
+            var result = `你说得对，但是${s[0]}是由${s[1]}自主研发的一款${s[2]}游戏。游戏发生在一个被称作「${s[3]}」的幻想世界，在这里，被${s[4]}选中的人将被授予「${s[5]}」，导引${s[6]}。` +
+                `你将扮演一位名为「${s[7]}」的神秘角色，在自由的旅行中邂逅${s[8]}的${s[9]}，和他们一起击败${s[10]}，找回失散的${s[11]}`;
+            document.getElementById("div1").innerHTML = result;
+        }
+
+        function btn1() {
+            for (var i = 0; i <= 11; i++) {
+                s[i] = document.getElementById(`t${i}`).value;
+            }
+            show();
+        }
+
+        function copyText() {
+            var text = document.getElementById("div1").innerText;
+            navigator.clipboard.writeText(text);
+            alert("已复制到剪贴板！");
+        }
+    </script>
+</body>
+</html>
